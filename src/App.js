@@ -10,6 +10,9 @@ function App() {
   //taking locations from the json data
   
   const [locationFilter, setLocationFilter] = useState("All");
+  // taking favourite locations
+  const [favorites, setFavorites] = useState([]);
+  
 
 
   const uniqueLocations = ["All", ...new Set(propertiesData.map(item => item.location))];
@@ -26,6 +29,14 @@ function App() {
     return matchesSearch && matchesLocation;
   });
   console.log("PropertyCard is:", PropertyCard);
+
+  const addToFavorites = (property) =>{
+    if(!favorites.some(fav => fav.id === property.id)) {
+      setFavorites([...favorites, property]);
+    }else{
+      alert("This property is already in your favorites!")
+    }
+  };
 
   return (
     <div className="App">
