@@ -30,12 +30,21 @@ function App() {
   });
   console.log("PropertyCard is:", PropertyCard);
 
+  //favorites function
+
   const addToFavorites = (property) =>{
     if(!favorites.some(fav => fav.id === property.id)) {
       setFavorites([...favorites, property]);
     }else{
       alert("This property is already in your favorites!")
     }
+  };
+
+  // Remove component from favorites
+
+  const removeFromFavorites = (id) => {
+    const newFavorites = favorites.filter((fav) => fav.id !== id);
+    setFavorites(newFavorites);
   };
 
   return (
@@ -71,7 +80,30 @@ function App() {
             ))}
           </select>
 
+
           </div>
+
+                    {favorites.length > 0 && (
+          <div style={{ padding: '20px', backgroundColor: '#e0f7fa', marginBottom: '30px', marginTop: '20px', borderRadius: '10px', border: '1px solid #b2ebf2' }}>
+            <h2 style={{ color: '#006064', textAlign: 'center', marginTop: 0 }}>❤️ My Favorites ({favorites.length})</h2>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', justifyContent: 'center' }}>
+              {favorites.map((fav) => (
+                <div key={fav.id} style={{ border: '1px solid #ccc', padding: '10px', backgroundColor: 'white', borderRadius: '5px', width: '200px', textAlign: 'center', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                  <img src={fav.image} alt={fav.title} style={{ width: '100%', height: '120px', objectFit: 'cover', borderRadius: '5px' }} />
+                  <h4 style={{ fontSize: '16px', margin: '10px 0' }}>{fav.title}</h4>
+                  
+                  {/* Remove Button */}
+                  <button 
+                    onClick={() => removeFromFavorites(fav.id)}
+                    style={{ backgroundColor: '#ff4d4d', color: 'white', border: 'none', padding: '5px 10px', borderRadius: '3px', cursor: 'pointer', fontSize: '12px' }}
+                  >
+                    Remove ❌
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
           <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
           {filteredProperties.length > 0 ? "Latest Properties" : "No properties found"}
@@ -82,7 +114,11 @@ function App() {
         {/* Property List Container */}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
           {filteredProperties.map((property) => (
-            <PropertyCard key={property.id} property={property} />
+            <PropertyCard 
+            key={property.id} 
+            property={property} 
+            addToFavorites = {addToFavorites}
+            />
           ))}
         </div>
       </main>
