@@ -3,10 +3,30 @@ import './App.css';
 import {PropertyCard} from './propertyCard';
 import propertiesData from './properties.json';
 
+
 function App() {
   // filter and search states
   const [searchTerm, setSearchTerm] = useState("")
+  //taking locations from the json data
+  
+  const [locationFilter, setLocationFilter] = useState("All");
+
+
+  const uniqueLocations = ["All", ...new Set(propertiesData.map(item => item.location))];
+
+  const filteredProperties = propertiesData.filter((property) => {
+
+  console.log("Search Term:", searchTerm);
+  console.log("Location Filter:", locationFilter);
+
+    
+    const matchesSearch = property.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesLocation = locationFilter === "All" || property.location === locationFilter;
+    
+    return matchesSearch && matchesLocation;
+  });
   console.log("PropertyCard is:", PropertyCard);
+
   return (
     <div className="App">
       <header style={{ backgroundColor: '#282c34', padding: '20px', color: 'white', textAlign: 'center' }}>
@@ -26,12 +46,31 @@ function App() {
             onChange={(e) => setSearchTerm(e.target.value)}
             style={{ padding: '10px', width: '300px', fontSize: '16px' }}
           />
+          
+
+        {/*Dropdown list*/}
+
+        <select 
+            value={locationFilter} 
+            onChange={(e) => setLocationFilter(e.target.value)}
+            style={{ padding: '10px', fontSize: '16px' }}
+          >
+            {uniqueLocations.map((loc, index) => (
+              <option key={index} value={loc}>{loc}</option>
+            ))}
+          </select>
+
           </div>
+
+          <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+          {filteredProperties.length > 0 ? "Latest Properties" : "No properties found"}
+        </h2>
+
 
         
         {/* Property List Container */}
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '20px' }}>
-          {propertiesData.map((property) => (
+          {filteredProperties.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
         </div>
