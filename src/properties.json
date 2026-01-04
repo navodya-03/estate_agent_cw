@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "title": "Modern Luxury Villa",
+    "price": "Rs. 45,000,000",
+    "location": "Colombo 07",
+    "bedrooms": 4,
+    "description": "A stunning luxury villa with a private pool and garden.",
+    "image": "villa1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Cozy City Apartment",
+    "price": "Rs. 25,000,000",
+    "location": "Kandy",
+    "bedrooms": 2,
+    "description": "Modern apartment located in the heart of the city.",
+    "image": "apartment1.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Beachfront Bungalow",
+    "price": "Rs. 60,000,000",
+    "location": "Galle",
+    "bedrooms": 3,
+    "description": "Beautiful bungalow with direct access to the beach.",
+    "image": "bungalow1.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Hill Country Cottage",
+    "price": "Rs. 18,000,000",
+    "location": "Nuwara Eliya",
+    "bedrooms": 3,
+    "description": "Scenic cottage surrounded by tea plantations.",
+    "image": "cottage1.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Suburban Family Home",
+    "price": "Rs. 30,000,000",
+    "location": "Gampaha",
+    "bedrooms": 4,
+    "description": "Spacious house perfect for a large family.",
+    "image": "house1.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Modern Studio",
+    "price": "Rs. 12,000,000",
+    "location": "Dehiwala",
+    "bedrooms": 1,
+    "description": "Compact and stylish studio apartment.",
+    "image": "studio1.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Colonial Mansion",
+    "price": "Rs. 85,000,000",
+    "location": "Mount Lavinia",
+    "bedrooms": 5,
+    "description": "Historic mansion with vintage architecture.",
+    "image": "mansion1.jpg"
+  }
+]
