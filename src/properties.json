@@ -88,14 +88,14 @@
     "bedrooms": 4,
     "tenure": "Freehold",
     "description": "Spacious house perfect for a large family. Features a large garden and ample parking space.",
-    "image": "/images/image 25.webp",
+    "image": "/images/image 25.avif",
     "images": [
-       "/images/image 25.webp",
-       "/images/image 26.jpg",
-       "/images/image 27.jpg",
-       "/images/image 28.jpg",
-       "/images/image 29.jpg",
-       "/images/image 30.jpg"
+       "/images/image 25.avif",
+       "/images/image 25.avif",
+       "/images/image 26.webp",
+       "/images/image 26.webp",
+       "/images/image 27.avif",
+       "/images/image 28.avif"
     ],
     "added": { "month": "March", "day": 10, "year": 2023 }
   },
@@ -108,9 +108,9 @@
     "bedrooms": 1,
     "tenure": "Leasehold",
     "description": "Compact and stylish studio apartment. Perfect for students or young professionals.",
-    "image": "/images/image 31.webp",
+    "image": "/images/image 31.jpg",
     "images": [
-       "/images/image 31.webp",
+       "/images/image 31.jpg",
        "/images/image 32.jpg",
        "/images/image 33.jpg",
        "/images/image 34.jpg",
@@ -128,14 +128,14 @@
     "bedrooms": 5,
     "tenure": "Freehold",
     "description": "Historic mansion with vintage architecture. A rare find with classic colonial charm.",
-    "image": "/images/image 37.webp",
+    "image": "/images/image 37.jpg",
     "images": [
-       "/images/image 37.webp",
+       "/images/image 37.jpg",
+       "/images/image 37.jpg",
+       "/images/image 38.jpg",
        "/images/image 38.jpg",
        "/images/image 39.jpg",
-       "/images/image 40.jpg",
-       "/images/image 41.jpg",
-       "/images/image 42.jpg"
+       "/images/image 39.jpg"
     ],
     "added": { "month": "July", "day": 1, "year": 2022 }
   }
