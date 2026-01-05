@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+/* --- src/App.css --- */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Header Styling */
+.app-header {
+  background-color: #2c3e50;
   color: white;
+  padding: 15px 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.header-content {
+  display: flex; /* මේකෙන් තමයි දෙපැත්තට බෙදන්නේ */
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Phone වලදී කඩලා පල්ලෙහාට ගන්න */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Search & Filter Section inside Header */
+.search-container {
+  display: flex;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 250px;
+  font-size: 16px;
+}
+
+.filter-select {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Main Container */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Property Grid */
+.property-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Buttons */
+button {
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .search-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-input, .filter-select {
+    width: 100%; /* Phone එකේදී full width ගන්න */
   }
 }
