@@ -6,7 +6,17 @@
     "location": "Colombo 07",
     "bedrooms": 4,
     "description": "A stunning luxury villa with a private pool and garden.",
-    "image": "villa1.jpg"
+    "image": "/images/image 1.webp",
+    "images": [
+       "/images/image 1.webp",
+       "/images/image 2.jpg",
+       "/images/image 3.jpg",
+       "/images/image 4.jpg",
+       "/images/image 5.jpg",
+       "/images/image 6.jpg"
+
+    ]
+
   },
   {
     "id": 2,
@@ -15,7 +25,16 @@
     "location": "Kandy",
     "bedrooms": 2,
     "description": "Modern apartment located in the heart of the city.",
-    "image": "apartment1.jpg"
+    "image": "/images/image 7.jpg",
+    "images": [
+       "/images/image 7.jpg",
+       "/images/image 8.jpg",
+       "/images/image 9.jpg",
+       "/images/image 10.jpg",
+       "/images/image 11.jpg",
+       "/images/image 12.jpg"
+
+    ]
   },
   {
     "id": 3,
@@ -24,7 +43,16 @@
     "location": "Galle",
     "bedrooms": 3,
     "description": "Beautiful bungalow with direct access to the beach.",
-    "image": "bungalow1.jpg"
+    "image": "/images/image 13.avif",
+    "images": [
+       "/images/image 13.avif",
+       "/images/image 14.avif",
+       "/images/image 15.avif",
+       "/images/image 16.avif",
+       "/images/image 17.avif",
+       "/images/image 18.webp"
+
+    ]
   },
   {
     "id": 4,
@@ -33,7 +61,16 @@
     "location": "Nuwara Eliya",
     "bedrooms": 3,
     "description": "Scenic cottage surrounded by tea plantations.",
-    "image": "cottage1.jpg"
+    "image": "/images/image 19.jpg",
+    "images": [
+       "/images/image 19.jpg",
+       "/images/image 20.webp",
+       "/images/image 21.webp",
+       "/images/image 22.webp",
+       "/images/image 23.jpg",
+       "/images/image 24.jpg"
+
+    ]
   },
   {
     "id": 5,
@@ -42,7 +79,16 @@
     "location": "Gampaha",
     "bedrooms": 4,
     "description": "Spacious house perfect for a large family.",
-    "image": "house1.jpg"
+    "image": "/images/image 25.webp",
+    "images": [
+       "/images/image 25.webp",
+       "/images/image 26.jpg",
+       "/images/image 27.jpg",
+       "/images/image 28.jpg",
+       "/images/image 29.jpg",
+       "/images/image 30.jpg"
+
+    ]
   },
   {
     "id": 6,
@@ -51,7 +97,16 @@
     "location": "Dehiwala",
     "bedrooms": 1,
     "description": "Compact and stylish studio apartment.",
-    "image": "studio1.jpg"
+    "image": "/images/image 31.webp",
+    "images": [
+       "/images/image 31.webp",
+       "/images/image 32.jpg",
+       "/images/image 33.jpg",
+       "/images/image 34.jpg",
+       "/images/image 35.jpg",
+       "/images/image 36.jpg"
+
+    ]
   },
   {
     "id": 7,
@@ -60,6 +115,15 @@
     "location": "Mount Lavinia",
     "bedrooms": 5,
     "description": "Historic mansion with vintage architecture.",
-    "image": "mansion1.jpg"
+    "image": "/images/image 37.webp",
+    "images": [
+       "/images/image 37.webp",
+       "/images/image 38.jpg",
+       "/images/image 39.jpg",
+       "/images/image 40.jpg",
+       "/images/image 41.jpg",
+       "/images/image 42.jpg"
+
+    ]
   }
 ]
