@@ -5,6 +5,15 @@ body {
   padding: 0;
   background-color: #f4f6f8;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Header Styling */
@@ -16,10 +25,10 @@ body {
 }
 
 .header-content {
-  display: flex; /* මේකෙන් තමයි දෙපැත්තට බෙදන්නේ */
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Phone වලදී කඩලා පල්ලෙහාට ගන්න */
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -29,7 +38,7 @@ body {
   font-size: 1.8rem;
 }
 
-/* Search & Filter Section inside Header */
+/* Search & Filter */
 .search-container {
   display: flex;
   gap: 10px;
@@ -53,9 +62,12 @@ body {
 
 /* Main Container */
 main {
+  flex: 1; /* Footer එක හැමවෙලේම පල්ලෙහා තියන්න */
   max-width: 1200px;
   margin: 20px auto;
   padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Property Grid */
@@ -76,11 +88,81 @@ button:hover {
   opacity: 0.9;
 }
 
-/* --- MOBILE RESPONSIVENESS --- */
+/* --- FOOTER STYLING (NEW) --- */
+.app-footer {
+  background-color: #1a252f;
+  color: white;
+  padding-top: 30px;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  gap: 20px;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-left ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-left li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #bdc3c7;
+}
+
+.footer-left li:hover {
+  color: #3498db;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 300px;
+  height: 250px; /* Map height */
+}
+
+/* Animated Scrolling Text */
+.ticker-wrap {
+  width: 100%;
+  background-color: #34495e;
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker {
+  display: inline-block;
+  animation: scroll 15s linear infinite;
+}
+
+.ticker-item {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  color: #f1c40f; /* Gold color text */
+  font-weight: bold;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .header-content {
+  .header-content, .footer-content {
     flex-direction: column;
-    gap: 15px;
     text-align: center;
   }
   
@@ -90,6 +172,10 @@ button:hover {
   }
 
   .search-input, .filter-select {
-    width: 100%; /* Phone එකේදී full width ගන්න */
+    width: 100%;
+  }
+  
+  .footer-right {
+    width: 100%;
   }
 }

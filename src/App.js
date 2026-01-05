@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'; // අලුත් CSS ෆයිල් එක මෙතනින් load වෙනවා
+import './App.css';
 import { PropertyCard } from './propertyCard';
 import propertiesData from './properties.json';
 
@@ -30,8 +30,9 @@ function PropertyDetails({ property, onBack, addToFavorites, allProperties }) {
   };
 
   const getMapSrc = (location) => {
+    // Detail View Map
     const loc = location === "All" ? "Sri Lanka" : location;
-    return `https://maps.google.com/maps?q=$?q=${loc}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    return `https://maps.google.com/maps?q=$?q=${loc}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
   };
 
   return (
@@ -73,7 +74,7 @@ function PropertyDetails({ property, onBack, addToFavorites, allProperties }) {
             <div style={{ marginTop: '20px', textAlign: 'center' }}>
               <h4>📍 Location: {property.location}</h4>
               <div style={{ width: '100%', height: '250px', borderRadius: '10px', overflow: 'hidden', border: '2px solid #ddd', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
-                <iframe title="Property Map Detail" width="100%" height="100%" src={getMapSrc(property.location)} style={{ border: 0 }} allowFullScreen></iframe>
+                <iframe title="Detail Map" width="100%" height="100%" src={getMapSrc(property.location)} style={{ border: 0 }} allowFullScreen></iframe>
               </div>
             </div>
         </div>
@@ -118,12 +119,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* HEADER: වම් පැත්තේ නම, දකුණු පැත්තේ Search/Filter */}
+      {/* HEADER */}
       <header className="app-header">
         <div className="header-content">
           <h1>🏡 Estate Agent App</h1>
           
-          {/* Dashboard එකේ ඉන්නවා නම් විතරක් Search Bar එක පෙන්වන්න */}
           {!selectedProperty && (
             <div className="search-container">
               <input 
@@ -173,14 +173,7 @@ function App() {
               </div>
             )}
 
-            {/* Map */}
-            <div style={{ marginBottom: '40px', textAlign: 'center' }}>
-              <h3>📍 Location Map: {locationFilter === "All" ? "Sri Lanka" : locationFilter}</h3>
-              <div style={{ width: '100%', height: '350px', borderRadius: '10px', overflow: 'hidden', border: '2px solid #ddd', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
-                <iframe title="Main Map" width="100%" height="100%" src={getMapSrc(locationFilter)} style={{ border: 0 }} allowFullScreen></iframe>
-              </div>
-            </div>
-
+            {/* Main Content (Properties only, Map moved to Footer) */}
             <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
               {filteredProperties.length > 0 ? "Latest Properties" : "No properties found"}
             </h2>
@@ -198,6 +191,50 @@ function App() {
           </>
         )}
       </main>
+
+      {/* --- NEW FOOTER --- */}
+      <footer className="app-footer">
+        <div className="footer-content">
+          
+          {/* Left Side: Dummy Links */}
+          <div className="footer-left">
+            <h3>Quick Links</h3>
+            <ul>
+              <li>Home</li>
+              <li>About Us</li>
+              <li>Services</li>
+              <li>Contact Support</li>
+              <li>Privacy Policy</li>
+            </ul>
+            <p style={{ fontSize: '0.9rem', color: '#7f8c8d' }}>© 2024 Estate Agent App. All rights reserved.</p>
+          </div>
+
+          {/* Right Side: Map (Moved from Main) */}
+          <div className="footer-right">
+            <h3 style={{ margin: '0 0 10px 0' }}>Find Us @ {locationFilter === "Srilanka" ? "Any where in Sri Lanka" : locationFilter}</h3>
+            <div style={{ width: '100%', height: '200px', borderRadius: '5px', overflow: 'hidden', border: '1px solid #555' }}>
+              <iframe 
+                title="Footer Map" 
+                width="100%" 
+                height="100%" 
+                src={getMapSrc(locationFilter)} 
+                style={{ border: 0 }} 
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom: Animated Scrolling Text */}
+        <div className="ticker-wrap">
+          <div className="ticker">
+            <span className="ticker-item">🌟 Sri Lanka's Best Real Estate Platform 🌟</span>
+            <span className="ticker-item">🏠 Find Your Dream Home Today! 🏠</span>
+            <span className="ticker-item"> Contact us: +94 11 234 5678 </span>
+            <span className="ticker-item"> Island-wide Coverage </span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

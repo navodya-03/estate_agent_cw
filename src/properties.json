@@ -1,11 +1,13 @@
 [
   {
     "id": 1,
+    "type": "House",
     "title": "Modern Luxury Villa",
-    "price": "Rs. 45,000,000",
+    "price": 45000000,
     "location": "Colombo 07",
     "bedrooms": 4,
-    "description": "A stunning luxury villa with a private pool and garden.",
+    "tenure": "Freehold",
+    "description": "A stunning luxury villa with a private pool and garden. Perfect for large families seeking privacy and elegance in the heart of the city.",
     "image": "/images/image 1.webp",
     "images": [
        "/images/image 1.webp",
@@ -14,17 +16,18 @@
        "/images/image 4.jpg",
        "/images/image 5.jpg",
        "/images/image 6.jpg"
-
-    ]
-
+    ],
+    "added": { "month": "October", "day": 12, "year": 2022 }
   },
   {
     "id": 2,
+    "type": "Apartment",
     "title": "Cozy City Apartment",
-    "price": "Rs. 25,000,000",
+    "price": 25000000,
     "location": "Kandy",
     "bedrooms": 2,
-    "description": "Modern apartment located in the heart of the city.",
+    "tenure": "Leasehold",
+    "description": "Modern apartment located in the heart of the city. Walking distance to all major amenities and transport links.",
     "image": "/images/image 7.jpg",
     "images": [
        "/images/image 7.jpg",
@@ -33,16 +36,18 @@
        "/images/image 10.jpg",
        "/images/image 11.jpg",
        "/images/image 12.jpg"
-
-    ]
+    ],
+    "added": { "month": "September", "day": 14, "year": 2023 }
   },
   {
     "id": 3,
+    "type": "Bungalow",
     "title": "Beachfront Bungalow",
-    "price": "Rs. 60,000,000",
+    "price": 60000000,
     "location": "Galle",
     "bedrooms": 3,
-    "description": "Beautiful bungalow with direct access to the beach.",
+    "tenure": "Freehold",
+    "description": "Beautiful bungalow with direct access to the beach. Ideal for a holiday home or vacation rental investment.",
     "image": "/images/image 13.avif",
     "images": [
        "/images/image 13.avif",
@@ -51,16 +56,18 @@
        "/images/image 16.avif",
        "/images/image 17.avif",
        "/images/image 18.webp"
-
-    ]
+    ],
+    "added": { "month": "January", "day": 5, "year": 2024 }
   },
   {
     "id": 4,
+    "type": "Cottage",
     "title": "Hill Country Cottage",
-    "price": "Rs. 18,000,000",
+    "price": 18000000,
     "location": "Nuwara Eliya",
     "bedrooms": 3,
-    "description": "Scenic cottage surrounded by tea plantations.",
+    "tenure": "Freehold",
+    "description": "Scenic cottage surrounded by tea plantations. Enjoy the cool climate and breathtaking views.",
     "image": "/images/image 19.jpg",
     "images": [
        "/images/image 19.jpg",
@@ -69,16 +76,18 @@
        "/images/image 22.webp",
        "/images/image 23.jpg",
        "/images/image 24.jpg"
-
-    ]
+    ],
+    "added": { "month": "December", "day": 20, "year": 2023 }
   },
   {
     "id": 5,
+    "type": "House",
     "title": "Suburban Family Home",
-    "price": "Rs. 30,000,000",
+    "price": 30000000,
     "location": "Gampaha",
     "bedrooms": 4,
-    "description": "Spacious house perfect for a large family.",
+    "tenure": "Freehold",
+    "description": "Spacious house perfect for a large family. Features a large garden and ample parking space.",
     "image": "/images/image 25.webp",
     "images": [
        "/images/image 25.webp",
@@ -87,16 +96,18 @@
        "/images/image 28.jpg",
        "/images/image 29.jpg",
        "/images/image 30.jpg"
-
-    ]
+    ],
+    "added": { "month": "March", "day": 10, "year": 2023 }
   },
   {
     "id": 6,
+    "type": "Studio",
     "title": "Modern Studio",
-    "price": "Rs. 12,000,000",
+    "price": 12000000,
     "location": "Dehiwala",
     "bedrooms": 1,
-    "description": "Compact and stylish studio apartment.",
+    "tenure": "Leasehold",
+    "description": "Compact and stylish studio apartment. Perfect for students or young professionals.",
     "image": "/images/image 31.webp",
     "images": [
        "/images/image 31.webp",
@@ -105,16 +116,18 @@
        "/images/image 34.jpg",
        "/images/image 35.jpg",
        "/images/image 36.jpg"
-
-    ]
+    ],
+    "added": { "month": "February", "day": 15, "year": 2024 }
   },
   {
     "id": 7,
+    "type": "Mansion",
     "title": "Colonial Mansion",
-    "price": "Rs. 85,000,000",
+    "price": 85000000,
     "location": "Mount Lavinia",
     "bedrooms": 5,
-    "description": "Historic mansion with vintage architecture.",
+    "tenure": "Freehold",
+    "description": "Historic mansion with vintage architecture. A rare find with classic colonial charm.",
     "image": "/images/image 37.webp",
     "images": [
        "/images/image 37.webp",
@@ -123,7 +136,7 @@
        "/images/image 40.jpg",
        "/images/image 41.jpg",
        "/images/image 42.jpg"
-
-    ]
+    ],
+    "added": { "month": "July", "day": 1, "year": 2022 }
   }
 ]
