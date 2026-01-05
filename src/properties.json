@@ -17,7 +17,8 @@
        "/images/image 5.jpg",
        "/images/image 6.jpg"
     ],
-    "added": { "month": "October", "day": 12, "year": 2022 }
+    "added": { "month": "October", "day": 12, "year": 2022 },
+    "floorPlan": "/images/floor 1.png"
   },
   {
     "id": 2,
@@ -37,7 +38,8 @@
        "/images/image 11.jpg",
        "/images/image 12.jpg"
     ],
-    "added": { "month": "September", "day": 14, "year": 2023 }
+    "added": { "month": "September", "day": 14, "year": 2023 },
+    "floorPlan": "/images/floor 2.webp"
   },
   {
     "id": 3,
@@ -57,7 +59,8 @@
        "/images/image 17.avif",
        "/images/image 18.webp"
     ],
-    "added": { "month": "January", "day": 5, "year": 2024 }
+    "added": { "month": "January", "day": 5, "year": 2024 },
+    "floorPlan": "/images/floor 3.png"
   },
   {
     "id": 4,
@@ -77,7 +80,8 @@
        "/images/image 23.jpg",
        "/images/image 24.jpg"
     ],
-    "added": { "month": "December", "day": 20, "year": 2023 }
+    "added": { "month": "December", "day": 20, "year": 2023 },
+    "floorPlan": "/images/floor 4.jpg"
   },
   {
     "id": 5,
@@ -97,7 +101,8 @@
        "/images/image 27.avif",
        "/images/image 28.avif"
     ],
-    "added": { "month": "March", "day": 10, "year": 2023 }
+    "added": { "month": "March", "day": 10, "year": 2023 },
+    "floorPlan": "/images/floor 5.webp"
   },
   {
     "id": 6,
@@ -117,7 +122,8 @@
        "/images/image 35.jpg",
        "/images/image 36.jpg"
     ],
-    "added": { "month": "February", "day": 15, "year": 2024 }
+    "added": { "month": "February", "day": 15, "year": 2024 },
+    "floorPlan": "/images/floor 6.jpg"
   },
   {
     "id": 7,
@@ -137,6 +143,7 @@
        "/images/image 39.jpg",
        "/images/image 39.jpg"
     ],
-    "added": { "month": "July", "day": 1, "year": 2022 }
+    "added": { "month": "July", "day": 1, "year": 2022 },
+    "floorPlan": "/images/floor 7.jpg"
   }
 ]

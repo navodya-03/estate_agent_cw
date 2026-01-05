@@ -3,7 +3,7 @@ import './App.css';
 import { PropertyCard } from './propertyCard';
 import propertiesData from './properties.json';
 
-// --- 1. DETAILED VIEW COMPONENT ---
+
 function PropertyDetails({ property, onBack, addToFavorites, allProperties }) {
   const [currentImage, setCurrentImage] = useState(0);
   const [activeTab, setActiveTab] = useState('desc');
@@ -11,6 +11,7 @@ function PropertyDetails({ property, onBack, addToFavorites, allProperties }) {
   const otherImagesFallback = allProperties
     .filter(p => p.id !== property.id)
     .map(p => p.image)
+
     .slice(0, 5);
 
   const images = (property.images && property.images.length > 0) 
@@ -18,6 +19,7 @@ function PropertyDetails({ property, onBack, addToFavorites, allProperties }) {
     : [property.image, ...otherImagesFallback];
 
   const nextImage = () => setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  
   const prevImage = () => setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
 
   const getMapSrc = (location) => {
@@ -66,10 +68,20 @@ function PropertyDetails({ property, onBack, addToFavorites, allProperties }) {
                 {activeTab === 'floor' && (
                     <div style={{ textAlign: 'center', padding: '20px' }}>
                         <h3>Floor Plan</h3>
-                        <p>Floor plan not available.</p>
-                        <div style={{ width: '100%', height: '200px', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#888' }}>[Floor Plan Placeholder]</div>
+                        {property.floorPlan ? (
+                            <img 
+                                src={property.floorPlan} 
+                                alt="Floor Plan" 
+                                style={{ width: '100%', maxWidth: '600px', borderRadius: '5px', border: '1px solid #ddd' }} 
+                            />
+                        ) : (
+                            <div style={{ height: '200px', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#888' }}>
+                                Floor plan uploading soon... ⏳
+                            </div>
+                        )}
                     </div>
                 )}
+                {/* --- UPDATE END --- */}
                 {activeTab === 'map' && (
                     <div style={{ height: '100%' }}>
                         <h3>Location Map</h3>
@@ -88,13 +100,17 @@ function App() {
   const [favorites, setFavorites] = useState([]);
   const [selectedProperty, setSelectedProperty] = useState(null);
 
-  // States
+
   const [searchTerm, setSearchTerm] = useState("");
+
   const [locationFilter, setLocationFilter] = useState("All");
   const [typeFilter, setTypeFilter] = useState("All");
+
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [minBeds, setMinBeds] = useState("");
+
+
   const [dateAfter, setDateAfter] = useState("");
 
   const uniqueLocations = ["All", ...new Set(propertiesData.map(item => item.location))];
@@ -103,12 +119,16 @@ function App() {
   // Logic
   const filteredProperties = propertiesData.filter((property) => {
     const matchesSearch = property.title.toLowerCase().includes(searchTerm.toLowerCase());
+
     const matchesLocation = locationFilter === "All" || property.location === locationFilter;
     const matchesType = typeFilter === "All" || property.type === typeFilter;
     const priceVal = property.price;
+
+
     const matchesMinPrice = minPrice === "" || priceVal >= parseInt(minPrice);
     const matchesMaxPrice = maxPrice === "" || priceVal <= parseInt(maxPrice);
     const matchesBeds = minBeds === "" || property.bedrooms >= parseInt(minBeds);
+
     const matchesDate = dateAfter === "" || property.added.year >= parseInt(dateAfter);
 
     return matchesSearch && matchesLocation && matchesType && matchesMinPrice && matchesMaxPrice && matchesBeds && matchesDate;
@@ -138,10 +158,10 @@ function App() {
 
   return (
     <div className="App">
-      {/* HEADER: Original Style (Name + Simple Search) */}
+      {/* HEADER */}
       <header className="app-header">
         <div className="header-content">
-          <h1>🏡 Estate Agent App</h1>
+          <h1>🏡 Estate Agent</h1>
           
           {!selectedProperty && (
             <div className="search-container">
@@ -171,7 +191,7 @@ function App() {
           <PropertyDetails property={selectedProperty} onBack={() => setSelectedProperty(null)} addToFavorites={addToFavorites} allProperties={propertiesData} />
         ) : (
           <>
-            {/* ADVANCED SEARCH PANEL (Moved to Main Body) */}
+            {/* filter panel */}
             <div className="advanced-search-panel" style={{ background: '#ecf0f1', padding: '20px', borderRadius: '8px', margin: '0 auto 30px auto', maxWidth: '1000px', border: '1px solid #bdc3c7' }}>
                 <h3 style={{ marginTop: 0, color: '#2c3e50' }}>🔍 Advanced Filter</h3>
                 <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -225,7 +245,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        {/* Footer content same as before */}
+        {/* Footer */}
         <div className="footer-content">
           <div className="footer-left">
             <h3>Quick Links</h3>
